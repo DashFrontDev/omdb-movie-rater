@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+:root {
+  --text:#F9F7F7;
+  --bg: #112D4E;
+  --highlight: #DBE2EF;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Poppins", sans-serif;
+  padding: 2em;
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.movieContainer {
+  background-color: var(--bg);
+  width: 100%;
+  max-width: 420px;
+  min-width: 0;
+  min-height: 320px;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin: 3rem 1rem 0 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s;
+}
+
+.movieContainer:focus-within, .movieContainer:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+}
+
+.highlight{
+  color: var(--highlight);
+}
+
+.title,.movieRating,.dataYear,.imdbRating,.imdbVotes,.genre {
+  color: var(--text);
+}
+.movieHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 0 0;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.moviePoster {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 1.6rem;
+  word-break: break-word;
+}
+
+p {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.movieRating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.searchFunc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+#searchBar {
+  width: 100%;
+  max-width: 250px;
+  height: 44px;
+  border-radius: 5px;
+  padding: 1em;
+  font-size: 1rem;
+  border: 2px solid #3F72AF;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#searchBar:focus {
+  border-color: #DBE2EF;
+}
+
+button {
+  width: 100px;
+  height: 44px;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: var(--text);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  color:var(--bg);
+}
+
+button:hover, button:focus {
+  background: var(--bg);
+  color: var(--text);
+  border: 2px solid var(--text);
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  max-width: 320px;
+  height: 220px;
+  border-radius: 10px;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  color: #b71c1c;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.04);
+}
+
+.credits{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+footer {
+  color:var(--text);
+  font-weight: 600;
+}
+
+a {
+  color:#DBE2EF;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1em;
+  }
+  .movieContainer {
+    margin: 2rem 0 0 0;
+    padding: 1em;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .moviePoster {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  .searchFunc {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+  }
+  #searchBar{
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.1rem;
+    height: 48px;
+  }
+  
+  button {
+    width:100px;
+    font-size: 1.1rem;
+    height: 48px;
+  }
+  .error {
+    max-width: 90vw;
+    height: auto;
+    padding: 1.2em 0.7em;
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.97rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .movieContainer {
+    margin: 1rem 0 0 0;
+    padding: 0.7em;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  #searchBar, button {
+    font-size: 1rem;
+    height: 42px;
+  }
+}
